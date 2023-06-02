@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_local_noti/fetures/notification/domain/providers/notification_provider.dart';
 import 'package:flutter_local_noti/fetures/notification/presentation/widgets/check_console.dart';
-import 'package:flutter_local_noti/fetures/notification/presentation/pages/dialog_add_noti.dart';
+import 'package:flutter_local_noti/fetures/notification/presentation/widgets/dialog_add_noti.dart';
 import 'package:flutter_local_noti/fetures/notification/presentation/widgets/notification.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
