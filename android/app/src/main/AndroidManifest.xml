@@ -1,5 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_local_noti">
+
+   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />            <!-- Floating Notification -->
+   <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />     <!-- Sound -->
+   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />         <!-- Auto Start -->
+   <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />               <!-- Lock Screen Notifications -->
+   <uses-permission android:name="android.permission.WAKE_LOCK" />                      <!-- Lock Screen Notifications -->
+
    <application
         android:label="flutter_local_noti"
         android:name="${applicationName}"
@@ -37,5 +44,16 @@
             </intent-filter>
         </receiver>
         <receiver android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+
+        <service
+            android:name="com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin$AlarmService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+        />
+        <service
+            android:name="com.dexterous.flutterlocalnotifications.FlutterLocalNotificationsPlugin$RescheduleReceiver"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+        />
     </application>
 </manifest>

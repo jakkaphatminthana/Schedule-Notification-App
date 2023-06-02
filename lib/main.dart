@@ -4,10 +4,10 @@ import 'package:flutter_local_noti/fetures/notification/presentation/pages/notif
 import 'package:flutter_local_noti/resources/theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  NotificationService().initNotification();   //Inject Notification
-  runApp(const ProviderScope(child:  MyApp()));//Inject Riverpod
+  await NotificationService().initNotification(); //Inject Notification
+  runApp(const ProviderScope(child: MyApp())); //Inject Riverpod
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Local_notifications',
       theme: theme,
       debugShowCheckedModeBanner: false,
-      home: const NotificationListScreen()
+      home: const NotificationListScreen(),
     );
   }
 }
